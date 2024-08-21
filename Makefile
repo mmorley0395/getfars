@@ -13,8 +13,8 @@ tables = accident vehicle person \
 	drimpair factor maneuver \
 	nmcrash nmimpair nmprior \
 	parkwork pbtype safetyeq \
-	vevent vindecode \
-	violatn vision vsoe 
+	vevent violatn vision \
+	vsoe 
 
 lookups = $(notdir $(basename $(wildcard data/*.txt)))
 

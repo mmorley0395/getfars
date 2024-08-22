@@ -25,7 +25,7 @@ load: $(addprefix load-,$(tables))
 	-$(psql) -v schema=$(SCHEMA) -f sql/spatial.sql
 
 load-%: FARS$(YEAR)NationalCSV.zip
-	./src/copy.sh $< $(SCHEMA) $*
+	./src/copy.sh $< $(SCHEMA) $* $(YEAR)
 
 init: init-schema $(addprefix init-,$(lookups))
 

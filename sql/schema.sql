@@ -4,8 +4,7 @@ SET search_path to :schema;
 
 CREATE TABLE state (
     state int primary key,
-    name text,
-    fips char(2)
+    name text, fips char(2)
 );
 
 CREATE TABLE accident (
@@ -125,7 +124,9 @@ CREATE TABLE damage (
     st_case integer,
     veh_no integer,
     mdareas integer,
-    mdareasname text
+    mdareasname text,
+    damage text,
+    damagename text
 );
 
 CREATE TABLE distract (
@@ -134,7 +135,9 @@ CREATE TABLE distract (
     st_case integer,
     veh_no integer,
     mdrdstrd integer,
-    mdrdstrdname text
+    mdrdstrdname text,
+    drdistract text,
+    drdistractname text
 );
 
 CREATE TABLE drimpair (
@@ -152,7 +155,9 @@ CREATE TABLE factor (
     st_case integer,
     veh_no integer,
     mfactor integer,
-    mfactorname text
+    mfactorname text,
+    vehiclecc text,
+    vehicleccname text
 );
 
 CREATE TABLE maneuver (
@@ -161,7 +166,10 @@ CREATE TABLE maneuver (
     st_case integer,
     veh_no integer,
     mdrmanav integer,
-    mdrmanavname text
+    mdrmanavname text,
+    maneuver text,
+    maneuvername text
+    
 );
 
 CREATE TABLE nmcrash (
@@ -171,7 +179,9 @@ CREATE TABLE nmcrash (
     veh_no integer,
     per_no integer,
     mtm_crsh integer,
-    mtm_crshname text
+    mtm_crshname text,
+    nmcc text,
+    nmccname text
 );
 
 CREATE TABLE nmimpair (
@@ -191,7 +201,11 @@ CREATE TABLE nmprior (
     veh_no integer,
     per_no integer,
     mpr_act integer,
-    mpr_actname text
+    mpr_actname text,
+    nmprior text,
+    nmpriorname text,
+    nmaction text,
+    nmactionname text
 );
 
 CREATE TABLE parkwork (
@@ -298,6 +312,26 @@ CREATE TABLE parkwork (
     ptrlr2vinname text,
     ptrlr3vin text,
     ptrlr3vinname text,
+    pvpicmake text,
+    pvpicmakename text,
+    pvpicmodel text,
+    pvpicmodelname text,
+    pvpicbodyclass text,
+    pvpicbodyclassname text,
+    picfinalbody text,
+    picfinalbodyname text,
+    pgvwr_from text,
+    pgvwr_fromname text,
+    pgvwr_to text,
+    pgvwr_toname text,
+    ptrlr1gvwr text,
+    ptrlr1gvwrname text,
+    ptrlr2gvwr text,
+    ptrlr2gvwrname text,
+    ptrlr3gvwr text,
+    ptrlr3gvwrname text,
+    punderoverride text,
+    punderoverridename text,
     constraint parkwork_pk primary key (st_case, veh_no)
 );
 
@@ -471,6 +505,26 @@ CREATE TABLE person (
     racename text,
     location integer,
     locationname text,
+    vpicmake text,
+    vpicmakename text,
+    vpicmodel text,
+    vpicmodelname text,
+    vpicbodyclass text,
+    vpicbodyclassname text,
+    icfinalbody text,
+    icfinalbodyname text,
+    gvwr_from text,
+    gvwr_fromname text,
+    gvwr_to text,
+    gvwr_toname text,
+    helm_use text,
+    helm_usename text,
+    helm_mis text,
+    helm_misname text,
+    devtype text,
+    devtypename text,
+    devmotor text,
+    devmotorname text,
     constraint person_pk primary key (st_case, veh_no, per_no)
 );
 
@@ -691,6 +745,26 @@ CREATE TABLE vehicle (
     trlr2vinname text,
     trlr3vin text,
     trlr3vinname text,
+    underoverride text,
+    underoverridename text,
+    vpicmake text,
+    vpicmakename text,
+    vpicmodel text,
+    vpicmodelname text,
+    vpicbodyclass text,
+    vpicbodyclassname text,
+    icfinalbody text,
+    icfinalbodyname text,
+    gvwr_from text,
+    gvwr_fromname text,
+    gvwr_to text,
+    gvwr_toname text,
+    trlr1gvwr text,
+    trlr1gvwrname text,
+    trlr2gvwr text,
+    trlr2gvwrname text,
+    trlr3gvwr text,
+    trlr3gvwrname text,
     constraint vehicle_pk primary key (st_case, veh_no)
 );
 
@@ -700,7 +774,9 @@ CREATE TABLE violatn (
     st_case integer,
     veh_no integer,
     mviolatn integer,
-    mviolatnname text
+    mviolatnname text,
+    violation text,
+    violationname text
 );
 
 CREATE TABLE vision (
@@ -709,7 +785,9 @@ CREATE TABLE vision (
     st_case integer,
     veh_no integer,
     mvisobsc integer,
-    mvisobscname text
+    mvisobscname text,
+    vision text,
+    visionname text
 );
 
 CREATE TABLE vsoe (
